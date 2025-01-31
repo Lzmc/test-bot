@@ -6,8 +6,7 @@ const config = {
   port: 9299,
   username: 'MineXeeBotLobby',
   version: '1.21.1',
-  reconnectDelay: 5000,
-  targetServer: 'smp'
+  reconnectDelay: 5000
 };
 
 let bot;
@@ -26,10 +25,6 @@ function createBot() {
 
   bot.on('spawn', () => {
     console.log('[BOT] Spawned.');
-    /*setTimeout(() => {
-      bot.chat(`/server ${config.targetServer}`);
-      console.log(`[BOT] Switching to ${config.targetServer}.`);
-    }, 2000);*/
   });
 
   bot.on('end', () => {

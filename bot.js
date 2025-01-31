@@ -31,10 +31,10 @@ function createBot() {
     }, 2000);
   });
 
-  bot.on('end', () => {
+  /*bot.on('end', () => {
     console.log('[BOT] Disconnected. Reconnecting...');
     setTimeout(createBot, config.reconnectDelay);
-  });
+  });*/
 
   bot.on('error', (err) => {
     console.log(`[BOT] Error: ${err.message}`);

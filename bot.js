@@ -4,7 +4,7 @@ const keep_alive = require('./keep_alive.js')
 const config = {
   host: 'mc.mingxee.xyz',
   port: 9299,
-  username: 'MineXeeBot',
+  username: 'MineXeeBotLobby',
   version: '1.21.1',
   reconnectDelay: 5000,
   targetServer: 'smp'
@@ -26,16 +26,16 @@ function createBot() {
 
   bot.on('spawn', () => {
     console.log('[BOT] Spawned.');
-    setTimeout(() => {
+    /*setTimeout(() => {
       bot.chat(`/server ${config.targetServer}`);
       console.log(`[BOT] Switching to ${config.targetServer}.`);
-    }, 2000);
+    }, 2000);*/
   });
 
-  /*bot.on('end', () => {
+  bot.on('end', () => {
     console.log('[BOT] Disconnected. Reconnecting...');
     setTimeout(createBot, config.reconnectDelay);
-  });*/
+  });
 
   bot.on('error', (err) => {
     console.log(`[BOT] Error: ${err.message}`);
